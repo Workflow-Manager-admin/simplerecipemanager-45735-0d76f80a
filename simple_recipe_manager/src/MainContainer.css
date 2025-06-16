@@ -1,4 +1,5 @@
 :root {
+  /* Light theme defaults */
   --app-primary: #4CAF50;
   --app-secondary: #FFC107;
   --app-accent: #FF5722;
@@ -11,6 +12,30 @@
   --text-secondary: #888;
   --radius: 14px;
 }
+
+/* Light theme overrides (for explicitness, but -- kept as root for ease) */
+.theme-light {
+  --main-bg: #f8f9fa;
+  --sidebar-bg: #fff;
+  --main-header-bg: #fff;
+  --border-light: #eee;
+  --text-main: #222;
+  --text-secondary: #888;
+}
+
+/* Dark theme variables */
+.theme-dark {
+  --main-bg: #222831;
+  --sidebar-bg: #23292e;
+  --main-header-bg: #23292e;
+  --border-light: #3a3e49;
+  --text-main: #f7f7f7;
+  --text-secondary: #d6dbe1;
+  --app-primary: #40e07d;
+  --app-secondary: #ffd666;
+  --app-accent: #ff864c;
+}
+
 
 .recipe-app-root {
   display: flex;
@@ -169,10 +194,46 @@
   color: #fff;
 }
 
+/* Theme Toggle styles */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 7px 12px;
+  border-radius: 8px;
+  margin-right: 7px;
+  font-size: 1.07em;
+  color: var(--app-primary);
+  transition: background 0.18s, color 0.17s;
+}
+.theme-toggle-btn:focus,
+.theme-toggle-btn:hover {
+  outline: none;
+  background: var(--border-light);
+  color: var(--app-accent);
+}
+
 .recipes-content {
   padding: 40px 32px 28px 32px;
   flex: 1 1 auto;
   overflow-y: auto;
+}
+
+/* App-wide theme: background and color */
+.recipe-app-root {
+  background: var(--main-bg);
+  color: var(--text-main);
+  transition: background 0.27s, color 0.18s;
+}
+
+/* For dark sidebar and main area smooth transition */
+.recipe-sidebar,
+.recipe-main-content,
+.main-header {
+  transition: background 0.2s, color 0.13s;
 }
 
 /* Responsive styles */
