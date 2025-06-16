@@ -1,0 +1,4 @@
+{
+    "command": "PORT=<port> BROWSER=none npm start",
+    "working_directory": "/home/kavia/workspace/code-generation/simplerecipemanager-45735-0d76f80a/simple_recipe_manager"
+}
